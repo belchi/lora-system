@@ -68,7 +68,7 @@ Description=LoRa Hub webbserver
 After=network.target
 
 [Service]
-User=martinb
+User=<USER>
 WorkingDirectory=/home/<USER>
 ExecStart=/home/<USER>/env/bin/python3 /home/<USER>/hub_web.py
 Restart=always
