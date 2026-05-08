@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoRa Hub</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0f1117;
+      color: #e0e0e0;
+      font-family: 'Courier New', monospace;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      color: #4ade80;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.25rem;
+    }
+
+    .subtitle {
+      font-size: 0.75rem;
+      color: #555;
+      margin-bottom: 2rem;
+      letter-spacing: 0.1em;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    th {
+      text-align: left;
+      padding: 0.5rem 1rem;
+      color: #4ade80;
+      border-bottom: 1px solid #1e2a1e;
+      letter-spacing: 0.1em;
+      font-size: 0.7rem;
+    }
+
+    td {
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid #1a1a1a;
+      color: #ccc;
+    }
+
+    tr:first-child td { color: #fff; }
+
+    .temp { color: #4ade80; font-weight: bold; }
+    .rssi { color: #888; font-size: 0.8rem; }
+
+    #status {
+      margin-top: 1.5rem;
+      font-size: 0.7rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>◈ LORA HUB</h1>
+  <p class="subtitle">TEMPERATURLOGG — UPPDATERAS VAR 10:E SEKUND</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>TIDPUNKT</th>
+        <th>SENSOR</th>
+        <th>TEMP</th>
+        <th>RSSI</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+
+  <p id="status">—</p>
+
+  <script>
+    async function load() {
+      const res  = await fetch("/api/data");
+      const data = await res.json();
+      const tbody = document.getElementById("tbody");
+
+      tbody.innerHTML = data.map(r => `
+        <tr>
+          <td>${r.timestamp}</td>
+          <td>${r.sender}</td>
+          <td class="temp">${r.value.toFixed(1)} °C</td>
+          <td class="rssi">${r.rssi} dBm</td>
+        </tr>
+      `).join("");
+
+      document.getElementById("status").textContent =
+        `Senast hämtad: ${new Date().toLocaleTimeString("sv-SE")} — ${data.length} poster`;
+    }
+
+    load();
+    setInterval(load, 10000);
+  </script>
+</body>
+</html>
