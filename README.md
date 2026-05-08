@@ -37,12 +37,12 @@ Pinout
 | GND          | GND    |
 ```
 
-Run on RPi to autostart:
-
 ```
 pip install lgpio gpiozero
 pip install flask
 ```
+
+Run on RPi to autostart:
 
 /etc/systemd/system/hub-lora.service:
 ```
