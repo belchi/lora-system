@@ -2,22 +2,26 @@ Project with a Lora "hub" on an RPi zero and RFM95W and a battery powered temp s
 Arduino Pro Mini is run on battery. Led and Voltage regulator is removed. The module is put to sleep for 15 mins between transmits and draws ~5µA during that time.
 
 Pinout
+
+
+
 ```
-RFM95W	Pro Mini
-VCC	VCC
-GND	GND
-SCK	D13
-MISO	D12
-MOSI	D11
-NSS	D10
-RESET	D9
-DIO0	D2
-ANT	antenn
-	
-DS18B20	Pro Mini
-VDD (röd)	D7
-GND (svart)	GND
-DATA (gul)	D4
+| RFM95W      | Pro Mini |
+| ----------- | -------- |
+| VCC         | VCC      |
+| GND         | GND      |
+| SCK         | D13      |
+| MISO        | D12      |
+| MOSI        | D11      |
+| NSS         | D10      |
+| RESET       | D9       |
+| DIO0        | D2       |
+| ANT         | antenn   |
+|             |          |
+| DS18B20     | Pro Mini |
+| VDD (röd)   | D7       |
+| GND (svart) | GND      |
+| DATA (gul)  | D4       |
 	
 4.7 kΩ pullup between DATA and D7	
 	
