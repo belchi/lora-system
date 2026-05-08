@@ -82,7 +82,7 @@ WantedBy=multi-user.target
 sudo systemctl daemon-reload
 sudo systemctl enable hub-lora hub-web
 sudo systemctl start hub-lora hub-web
-``
+```
 
 Check
 ```
