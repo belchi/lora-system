@@ -51,9 +51,9 @@ Description=LoRa Hub mottagare
 After=network.target
 
 [Service]
-User=martinb
-WorkingDirectory=/home/martinb
-ExecStart=/home/martinb/env/bin/python3 /home/martinb/hub_lorarf.py
+User=<USER>
+WorkingDirectory=/home/<USER>
+ExecStart=/home/<USER>/env/bin/python3 /home/<USER>/hub_lorarf.py
 Restart=always
 RestartSec=5
 
@@ -69,8 +69,8 @@ After=network.target
 
 [Service]
 User=martinb
-WorkingDirectory=/home/martinb
-ExecStart=/home/martinb/env/bin/python3 /home/martinb/hub_web.py
+WorkingDirectory=/home/<USER>
+ExecStart=/home/<USER>/env/bin/python3 /home/<USER>/hub_web.py
 Restart=always
 RestartSec=5
 
