@@ -25,15 +25,16 @@ Pinout
 	
 4.7 kΩ pullup between DATA and D7	
 	
-RPi GPIO	RFM95W
-GPIO 7 (CE1)	NSS/CS
-GPIO 25	RESET
-GPIO 22	DIO0
-GPIO 11	SCK
-GPIO 10	MOSI
-GPIO 9	MISO
-3.3V	VCC
-GND	GND
+| RPi GPIO     | RFM95W |
+| ------------ | ------ |
+| GPIO 7 (CE1) | NSS/CS |
+| GPIO 25      | RESET  |
+| GPIO 22      | DIO0   |
+| GPIO 11      | SCK    |
+| GPIO 10      | MOSI   |
+| GPIO 9       | MISO   |
+| 3.3V         | VCC    |
+| GND          | GND    |
 ```
 
 Run on RPi to autostart:
