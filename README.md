@@ -42,7 +42,7 @@ pip install lgpio gpiozero
 pip install flask
 ```
 
-Run on RPi to autostart:
+Edit to autostart:
 
 /etc/systemd/system/hub-lora.service:
 ```
