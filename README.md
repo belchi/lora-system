@@ -1,5 +1,5 @@
 Project with a Lora "hub" on an RPi zero and RFM95W and a battery powered temp sensor on Arduino Pro mini and RFM95W. 
-Arduino Pro Mini is run on battery. Led and Voltage regulator is removed. The module is put to sleep for 15 mins between transmits and draws ~5mA during that time.
+Arduino Pro Mini is run on battery. Led and Voltage regulator is removed. The module is put to sleep for 15 mins between transmits and draws ~5µA during that time.
 
 Run on RPi to autostart:
 
