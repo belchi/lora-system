@@ -19,9 +19,7 @@ VDD (röd)	D7
 GND (svart)	GND
 DATA (gul)	D4
 	
-4.7 kΩ pullup between DATA och D7	
-	
-	
+4.7 kΩ pullup between DATA and D7	
 	
 RPi GPIO	RFM95W
 GPIO 7 (CE1)	NSS/CS
